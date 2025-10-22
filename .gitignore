@@ -1,0 +1,10 @@
+#Configuração de Banco de Dados
+includes/db_connection.php
+
+# Arquivos de IDE (VS Code, etc.)
+.vscode/
+
+# Arquivos de Log, Cache e Dependências
+*.log
+/vendor/
+/cache/
