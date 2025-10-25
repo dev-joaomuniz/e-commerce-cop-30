@@ -1,1 +1,188 @@
 /* Estilos globais do projeto. Tema Pará/COP-30. */
+
+/* === MUDANÇAS NO HEADER (Componentes principais) === */
+
+/* Define largura máxima da logo */
+.header-logo {
+  max-width: 70px;
+}
+
+/* Define transição para suavizar */
+.main-header a {
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom no hover da logo */
+.main-header a:hover {
+  transform: scale(1.1);
+}
+
+/* Organiza os blocos lado a lado, centraliza os blocos verticalmente e
+coloca um espaço entre eles */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* === MUDANÇAS NO HEADER (Ícones) === */
+
+/* Alinha, define espaço entre os ícones de perfil, carrinho e menu e
+garante que o ícone de menu fique acima de tudo */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 10002;
+}
+
+/* Altera o tamanho e cor dos icones de perfil e carrinho,
+Aplica transição nos ícones de perfil e carrinho */
+.header-actions a {
+  font-size: 18px;
+  color: #333333;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+/* Adiciona o efeito de zoom e mudança de cor nos ícones de perfil e carrinho */
+.header-actions a:hover {
+  color: darkred;
+  transform: scale(1.15);
+}
+
+/* Altera o tamanho do ícone de menu e define transição para suavizar */
+.header-actions button {
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: none; /* Esconde botão no desktop */
+}
+
+/* Efeito de zoom no ícone de menu */
+.header-actions button:hover {
+  color: darkred;
+  transform: scale(1.15);
+}
+
+/* === MUDANÇAS NO HEADER (Links de navegação) === */
+
+/* Formata lista, remove marcadores e define espaçamento */
+.main-header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* Remove sublinhado, define cor dos links de navegação,
+torna possível transformações e define transição para suavizar */
+.main-header nav ul li a {
+  text-decoration: none;
+  color: #333333;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de zoom e mudança de cor no hover dos links de navegação */
+.main-header nav ul li a:hover {
+  color: darkred;
+  transform: scale(1.15);
+}
+
+/* === MEDIA QUERY: TELAS PEQUENAS === */
+@media (max-width: 768px) {
+  /* === CONFIGURAÇÃO GERAL DO HEADER === */
+
+  /* Define o header como relativo, garante que ele flutue
+    acima da slidebar e adiciona sombra */
+  header {
+    position: relative;
+    font-size: 18px;
+    width: 100%;
+    background-color: white;
+    z-index: 10001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Ajuste no espaçamento do header horizontalmente */
+  .main-header {
+    justify-content: space-between;
+  }
+
+  /* === BOTÃO MENU / ÍCONES === */
+
+  /* Mostrar botão menu */
+  .header-actions button {
+    display: block;
+  }
+
+  /* Esconde o ícone X */
+  #icon-x {
+    display: none;
+  }
+
+  /* Estiliza botão menu quando estiver Ativo */
+  .header-actions button.active {
+    border-radius: 4px;
+    text-align: left;
+  }
+
+  /* Quando o botão está ATIVO esconde as barras */
+  .header-actions button.active #icon-bars {
+    display: none;
+  }
+
+  /* Quando o botão está ATIVO mostra o X */
+  .header-actions button.active #icon-x {
+    display: block;
+  }
+
+  /* === SLIDEBAR === */
+
+  /* Posiciona o menu fixo à direita e o desloca 100% para fora da tela,
+    preparando a transição de deslize */
+  .main-header nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    border-bottom-left-radius: 15px;
+    z-index: 9999;
+    background-color: white;
+  }
+
+  /* Classe adicionada pelo JS no clique, traz o menu
+   para dentro da tela e aplica a sombra lateral */
+  .main-header nav.menu-aberto {
+    transform: translateX(0);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* === CONTEÚDO DA SLIDEBAR === */
+
+  /* Espaço na lista para começar abaixo do header */
+  .main-header nav ul {
+    padding-top: 60px;
+  }
+
+  /* Deixa o menu vertical e alinha o conteúdo */
+  .main-header nav.menu-aberto ul {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* Organiza os itens do menu, Garante que cada LI ocupe
+   100% da largura e aplica o padding de recuo do texto */
+  .main-header nav ul li {
+    width: 100%;
+    padding: 2px 20px;
+  }
+
+}
