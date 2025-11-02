@@ -1,71 +1,54 @@
-/* Estilos globais do projeto. Tema Pará/COP-30. */
+/*==============================================
+ * ESTILOS GLOBAIS
+ * Tema: Pará/COP-30
+ *==============================================*/
 
-/* === MUDANÇAS NO HEADER (Componentes principais) === */
+/* --- RESET BÁSICO E AJUSTES DE CORPO --- */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  padding-top: 10px; /* Espaço para afastar o header do topo */
+}
+
+/*==============================================
+ * HEADER & NAVEGAÇÃO
+ *==============================================*/
+
+/* --- 1. COMPONENTES PRINCIPAIS --- */
 
 /* Define largura máxima da logo */
 .header-logo {
   max-width: 70px;
 }
 
-/* Define transição para suavizar */
-.main-header a {
-  transition: transform 0.3s ease;
-}
-
-/* Efeito de zoom no hover da logo */
-.main-header a:hover {
-  transform: scale(1.1);
-}
-
-/* Organiza os blocos lado a lado, centraliza os blocos verticalmente e
-coloca um espaço entre eles */
+/* Organiza os blocos (Logo, Nav, Ícones) lado a lado */
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* === MUDANÇAS NO HEADER (Ícones) === */
-
-/* Alinha, define espaço entre os ícones de perfil, carrinho e menu e
-garante que o ícone de menu fique acima de tudo */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  z-index: 10002;
-}
-
-/* Altera o tamanho e cor dos icones de perfil e carrinho,
-Aplica transição nos ícones de perfil e carrinho */
-.header-actions a {
-  font-size: 18px;
-  color: #333333;
+/* Regras de Transição e Display (Links e Botões) */
+.main-header a,
+.header-actions button {
   transition: transform 0.3s ease, color 0.3s ease;
   display: inline-block;
 }
 
-/* Adiciona o efeito de zoom e mudança de cor nos ícones de perfil e carrinho */
-.header-actions a:hover {
-  color: darkred;
-  transform: scale(1.15);
-}
-
-/* Altera o tamanho do ícone de menu e define transição para suavizar */
-.header-actions button {
-  font-size: 16px;
-  transition: transform 0.3s ease, color 0.3s ease;
-  display: none; /* Esconde botão no desktop */
-}
-
-/* Efeito de zoom no ícone de menu */
+/* Regras de HOVER (Zoom e Cor) */
+.main-header a:hover,
 .header-actions button:hover {
   color: darkred;
   transform: scale(1.15);
 }
 
-/* === MUDANÇAS NO HEADER (Links de navegação) === */
+/* --- 2. LINKS DE NAVEGAÇÃO --- */
 
 /* Formata lista, remove marcadores e define espaçamento */
 .main-header nav ul {
@@ -77,24 +60,146 @@ Aplica transição nos ícones de perfil e carrinho */
   align-items: center;
 }
 
-/* Remove sublinhado, define cor dos links de navegação,
-torna possível transformações e define transição para suavizar */
+/* Define cor dos links de navegação e remove sublinhado */
 .main-header nav ul li a {
   text-decoration: none;
   color: #333333;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito de zoom e mudança de cor no hover dos links de navegação */
-.main-header nav ul li a:hover {
-  color: darkred;
-  transform: scale(1.15);
+/* --- 3. ÍCONES E AÇÕES (Perfil, Carrinho, Menu Mobile) --- */
+
+/* Alinha, define espaço entre os ícones e
+garante que o ícone de menu fique acima */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 10002;
 }
 
-/* === MEDIA QUERY: TELAS PEQUENAS === */
-@media (max-width: 768px) {
-  /* === CONFIGURAÇÃO GERAL DO HEADER === */
+/* Altera o tamanho e cor dos ícones de perfil e carrinho */
+.header-actions a {
+  font-size: 18px;
+  color: #333333;
+}
+
+/* Altera o tamanho do ícone de menu e esconde no desktop */
+.header-actions button {
+  font-size: 16px;
+  display: none;
+}
+
+/*==============================================
+ * FOOTER
+ *==============================================*/
+
+/* --- 1. ESTILOS GERAIS E BASE --- */
+
+/* Fonte, cor de fundo e espaçamento externo */
+.main-footer {
+  background-color: #04523d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Organiza os blocos principais (Logo/Descrição e Menus) no desktop */
+.footer-content {
+  display: flex;
+  justify-content: flex-start;
+  padding: 25px 70px;
+}
+
+/* Define logo do footer para branco e tamanho */
+.main-footer img {
+  filter: brightness(0) invert(1);
+  max-width: 60px;
+  display: block;
+}
+
+/* Efeito de hover nos links */
+.footer-content a:hover {
+  color: white;
+}
+
+/* --- 2. COLUNA INTRO (Logo & Descrição) --- */
+
+/* Define tamanho da descrição e organiza a esquerda */
+.footer-intro p {
+  width: 350px;
+  text-align: left;
+}
+
+/* --- 3. BLOCO DE NAVEGAÇÃO (Links, Categorias, Contato) --- */
+
+/* Contêiner dos 3 menus (Distribuição Horizontal no Desktop) */
+.footer-navigation {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  margin-left: 30px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+/* Define tamanho e cor dos títulos */
+.footer-navigation h3 {
+  color: white;
+  font-weight: 100;
+}
+
+/* Define cor e tira sublinhado dos links no footer */
+.footer-group a,
+.footer-group i {
+  color: #cbf2e3;
+  text-decoration: none;
+}
+
+/* Força links/parágrafos a ficarem em colunas verticais */
+.footer-group a,
+.footer-group p {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Formata itens de Contato (ícone e texto lado a lado) */
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Zera as margens do parágrafo para garantir o alinhamento vertical com o ícone */
+.contato-item p {
+  margin: 0;
+}
+
+/* --- 4. LINHA DIVISÓRIA E COPYRIGHT --- */
+
+/* Linha divisória: cor e margens de alinhamento lateral */
+.main-footer hr {
+  border: 0;
+  border-top: 1px solid #3d806a;
+  margin: 30px 60px 0 60px;
+}
+
+/* Cor e espaçamento vertical do Copyright (afeta todos os <p>) */
+footer p {
+  color: #cbf2e3;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+/*==============================================
+ * MEDIA QUERY: RESPONSIVIDADE (<= 992px)
+ *==============================================*/
+
+@media (max-width: 992px) {
+  /* --- 1. HEADER RESPONSIVO: CONFIGURAÇÃO GERAL --- */
 
   /* Define o header como relativo, garante que ele flutue
     acima da slidebar e adiciona sombra */
@@ -112,7 +217,7 @@ torna possível transformações e define transição para suavizar */
     justify-content: space-between;
   }
 
-  /* === BOTÃO MENU / ÍCONES === */
+  /* --- 2. HEADER RESPONSIVO: BOTÃO MENU / ÍCONES --- */
 
   /* Mostrar botão menu */
   .header-actions button {
@@ -140,7 +245,7 @@ torna possível transformações e define transição para suavizar */
     display: block;
   }
 
-  /* === SLIDEBAR === */
+  /* --- 3. HEADER RESPONSIVO: SLIDEBAR E CONTEÚDO --- */
 
   /* Posiciona o menu fixo à direita e o desloca 100% para fora da tela,
     preparando a transição de deslize */
@@ -164,8 +269,6 @@ torna possível transformações e define transição para suavizar */
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* === CONTEÚDO DA SLIDEBAR === */
-
   /* Espaço na lista para começar abaixo do header */
   .main-header nav ul {
     padding-top: 60px;
@@ -185,4 +288,45 @@ torna possível transformações e define transição para suavizar */
     padding: 2px 20px;
   }
 
+  /* --- 4. FOOTER RESPONSIVO: LAYOUT GERAL --- */
+
+  /* Empilha as colunas (Logo/Intro e Navegação) e ajusta padding */
+  .footer-content {
+    flex-direction: column;
+    padding: 25px 30px;
+    gap: 30px;
+  }
+
+  /* Garante que o texto de descrição não tenha largura fixa */
+  .footer-intro p {
+    width: auto;
+  }
+
+  /* --- 5. FOOTER RESPONSIVO: ORGANIZAÇÃO DOS MENUS --- */
+
+  /* Empilha os 3 menus e remove a distribuição horizontal do desktop */
+  .footer-navigation {
+    flex-direction: column;
+    flex-grow: unset;
+    margin-left: 0;
+    gap: 30px;
+  }
+
+  .footer-group {
+    width: 100%;
+  }
+
+  /* --- 6. FOOTER RESPONSIVO: LINHA E COPYRIGHT --- */
+
+  /* Alinha a linha divisória */
+  .main-footer hr {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  /* Centraliza e limita o texto do copyright */
+  .main-footer > p {
+    text-align: center;
+    padding: 0 40px;
+  }
 }

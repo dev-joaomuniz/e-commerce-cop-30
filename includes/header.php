@@ -14,17 +14,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belêmica</title>
+    <!-- Ícones Font Awesome -->
     <script src="https://kit.fontawesome.com/c67b07ff34.js" crossorigin="anonymous"></script>
+    <!-- Estilos principais -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header>
         <div class="main-header">
+            <!-- Logo principal -->
             <a href="../e-commerce-cop-30/index.php">
                 <img class="header-logo" src="assets/images/belemica.png" alt="Logo-Belêmica">
             </a>
 
+            <!-- Menu de navegação Principal -->
             <nav class="main-nav" id="main-nav-menu">
                 <ul class="main-menu">
                     <li><a href="">Início</a></li>
@@ -36,6 +40,7 @@
                 </ul>
             </nav>
 
+            <!-- Ações do Header: usuário, carrinho e menu mobile -->
             <div class="header-actions">
                 <a href="">
                     <i class="fa-regular fa-user"></i>
